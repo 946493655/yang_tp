@@ -1,0 +1,21 @@
+/*================== 这里是后台自定义样式 ==================*/
+
+
+div { font-family:"微软雅黑"; }
+.star { color:red;position:relative;top:3px; }
+.table_center,.table_center th { text-align:center; }
+.table_w { width:70%; }
+
+.login form { margin:0 auto;width:600px;border:1px solid lightgrey;border-radius:5px;font-family:"微软雅黑"; }
+.login form p { text-align:center;font-size:25px; }
+.login form table { margin:20px auto;width:400px;font-size:25px; }
+.login form td { padding:5px; }
+.login form input { padding:5px 10px;border:1px solid lightgrey;border-radius:5px;font-size:20px;font-family:"微软雅黑"; }
+.login form #submit {
+    padding:5px 20px;
+    width:200px;
+    color:white;
+    border:1px solid rgb(14,144,210);
+    background:rgb(14,144,210);
+    cursor:pointer;
+}
