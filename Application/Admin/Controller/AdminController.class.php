@@ -2,6 +2,7 @@
 namespace Admin\Controller;
 
 use Admin\Model\AdminModel;
+use Admin\Model\LogModel;
 
 class AdminController extends BaseController
 {
@@ -53,6 +54,24 @@ class AdminController extends BaseController
             'adminName' =>  $uname,
         ];
         session('yang',$adminInfo);
+        //添加到日志
+        $log = [
+            'adminid'   =>  $admin['id'],
+            'serial'    =>  date('YmdHis',time()).rand(0,10000),
+            'ip'        =>  $this->getIp(),
+            'ipaddr'    =>  $this->getCityByIp(),
+            'loginTime'    =>  time(),
+        ];
+        $logModel = M('Log');
+        $logModel->create($log);
         $this->success('登录成功！', $this->prefix_domain.'/home/index');
+    }
+
+    public function logout()
+    {
+//        $logModel = M('Log');
+//        $logModel->where('serial',session('yang.serial'))->save(['logoutTime'=>time()]);
+        session('');
+        $this->success('退出成功！',$this->prefix_domain.'/admin/login');
     }
 }

@@ -32,18 +32,18 @@
         <!--<span class="icon-bar"></span>-->
         <!--<span class="icon-bar"></span>-->
     <!--</button>-->
-    <a class="navbar-brand" href="">XXX 后台管理 </a>
+    <a class="navbar-brand" href=""><?php echo ($session['adminName']?'YANGYANG':'XXX'); ?> 后台管理 </a>
 </div>
 <ul class="nav navbar-right top-nav">
     <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> XXX <b class="caret"></b></a>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo ($session['adminName']?$session['adminName']:'某某'); ?> <b class="caret"></b></a>
         <ul class="dropdown-menu">
             <li>
                 <a href=""><i class="fa fa-fw fa-gear"></i> 设置 </a>
             </li>
             <li class="divider"></li>
             <li>
-                <a href=""><i class="fa fa-fw fa-power-off"></i> 退出 </a>
+                <a href="<?php echo ($prefix_domain); ?>/admin/logout"><i class="fa fa-fw fa-power-off"></i> 退出 </a>
             </li>
         </ul>
     </li>
@@ -56,23 +56,23 @@
         <li>
             <a href=""><i class="fa fa-fw fa-dashboard"></i> 首页</a>
         </li>
-        <li>
-            <a href="javascript:;" data-toggle="collapse" data-target="#demo1">
-                <i class="fa fa-fw fa-arrows-v"></i> 管理员
-                <i class="fa fa-fw fa-caret-down"></i>
-            </a>
-            <ul id="demo1" class="collapse">
-                <li>
-                    <a href=""><i class="fa fa-fw fa-table"></i> 管理列表</a>
-                </li>
+        <!--<li>-->
+            <!--<a href="javascript:;" data-toggle="collapse" data-target="#demo1">-->
+                <!--<i class="fa fa-fw fa-arrows-v"></i> 管理员-->
+                <!--<i class="fa fa-fw fa-caret-down"></i>-->
+            <!--</a>-->
+            <!--<ul id="demo1" class="collapse">-->
                 <!--<li>-->
-                    <!--<a href=""><i class="fa fa-fw fa-edit"></i> 你的资料</a>-->
+                    <!--<a href=""><i class="fa fa-fw fa-table"></i> 管理列表</a>-->
                 <!--</li>-->
-                <!--<li>-->
-                    <!--<a href=""><i class="fa fa-fw fa-edit"></i> 你的密码</a>-->
-                <!--</li>-->
-            </ul>
-        </li>
+                <!--&lt;!&ndash;<li>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<a href=""><i class="fa fa-fw fa-edit"></i> 你的资料</a>&ndash;&gt;-->
+                <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                <!--&lt;!&ndash;<li>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<a href=""><i class="fa fa-fw fa-edit"></i> 你的密码</a>&ndash;&gt;-->
+                <!--&lt;!&ndash;</li>&ndash;&gt;-->
+            <!--</ul>-->
+        <!--</li>-->
         <li>
             <a href="javascript:;" data-toggle="collapse" data-target="#demo2">
                 <i class="fa fa-fw fa-arrows-v"></i> 会员
@@ -87,20 +87,20 @@
                 </li>
             </ul>
         </li>
-        <!--<li>-->
-            <!--<a href="javascript:;" data-toggle="collapse" data-target="#demo3">-->
-                <!--<i class="fa fa-fw fa-arrows-v"></i> 日志管理-->
-                <!--<i class="fa fa-fw fa-caret-down"></i>-->
-            <!--</a>-->
-            <!--<ul id="demo3" class="collapse">-->
-                <!--<li>-->
-                    <!--<a href=""><i class="fa fa-fw fa-wrench"></i> 管理员日志</a>-->
-                <!--</li>-->
-                <!--<li>-->
-                    <!--<a href=""><i class="fa fa-fw fa-wrench"></i> 会员日志</a>-->
-                <!--</li>-->
-            <!--</ul>-->
-        <!--</li>-->
+        <li>
+            <a href="javascript:;" data-toggle="collapse" data-target="#demo3">
+                <i class="fa fa-fw fa-arrows-v"></i> 管理员操作
+                <i class="fa fa-fw fa-caret-down"></i>
+            </a>
+            <ul id="demo3" class="collapse">
+                <li>
+                    <a href=""><i class="fa fa-fw fa-wrench"></i> 管理员列表</a>
+                </li>
+                <li>
+                    <a href=""><i class="fa fa-fw fa-wrench"></i> 管理员(你的)日志</a>
+                </li>
+            </ul>
+        </li>
         <!--<li>-->
             <!--<a href=""><i class="fa fa-fw fa-dashboard"></i> 马甲格式</a>-->
         <!--</li>-->
