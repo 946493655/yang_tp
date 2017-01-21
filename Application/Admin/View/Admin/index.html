@@ -1,0 +1,33 @@
+<include file='Common:header'/>
+<!--网页内容开始-->
+<div class="row" style="margin:0;">
+    <div class="col-lg-6 table_w">
+        <h2>管理员列表</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover table_center">
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>管理员</th>
+                    <th>创建时间</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php foreach ($datas as $data) { ?>
+                <tr>
+                    <td><?php echo $data['id']; ?></td>
+                    <td><?php echo $data['admin']; ?></td>
+                    <td><?php echo date('Y-m-d H:i',$data['createtime']); ?></td>
+                    <td><a href="">修改</a></td>
+                </tr>
+                <?php } ?>
+                </tbody>
+            </table>
+            <!--@include('admin.layout.page')-->
+        </div>
+    </div>
+    <include file='Common:info'/>
+</div>
+<!--网页内容开始-->
+<include file='Common:footer'/>

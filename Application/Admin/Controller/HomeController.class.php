@@ -10,17 +10,11 @@ class HomeController extends BaseController
     public function __construct()
     {
         parent::__construct();
-        if (!session('yang')) { $this->success('未登录！',$this->prefix_domain.'/admin/login'); }
+        if (!$this->adminid) { redirect(PREFIXADMIN.'/login/login',0,'未登录！'); }
     }
 
     public function index()
     {
-//        echo "<pre>"; var_dump(session('yang'));exit;
-        $assign = [
-            'prefix_domain' => $this->prefix_domain,
-            'session'       =>  session('yang'),
-        ];
-        $this->assign($assign);
         $this->display();
     }
 }

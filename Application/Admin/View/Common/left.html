@@ -22,20 +22,20 @@
                 <!--&lt;!&ndash;</li>&ndash;&gt;-->
             <!--</ul>-->
         <!--</li>-->
-        <li>
-            <a href="javascript:;" data-toggle="collapse" data-target="#demo2">
-                <i class="fa fa-fw fa-arrows-v"></i> 会员
-                <i class="fa fa-fw fa-caret-down"></i>
-            </a>
-            <ul id="demo2" class="collapse">
-                <li>
-                    <a href=""><i class="fa fa-fw fa-table"></i> 会员列表</a>
-                </li>
-                <li>
-                    <a href=""><i class="fa fa-fw fa-edit"></i> 身份查询</a>
-                </li>
-            </ul>
-        </li>
+        <!--<li>-->
+            <!--<a href="javascript:;" data-toggle="collapse" data-target="#demo2">-->
+                <!--<i class="fa fa-fw fa-arrows-v"></i> 会员-->
+                <!--<i class="fa fa-fw fa-caret-down"></i>-->
+            <!--</a>-->
+            <!--<ul id="demo2" class="collapse">-->
+                <!--<li>-->
+                    <!--<a href=""><i class="fa fa-fw fa-table"></i> 会员列表</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href=""><i class="fa fa-fw fa-edit"></i> 身份查询</a>-->
+                <!--</li>-->
+            <!--</ul>-->
+        <!--</li>-->
         <li>
             <a href="javascript:;" data-toggle="collapse" data-target="#demo3">
                 <i class="fa fa-fw fa-arrows-v"></i> 管理员操作
@@ -43,10 +43,11 @@
             </a>
             <ul id="demo3" class="collapse">
                 <li>
-                    <a href=""><i class="fa fa-fw fa-wrench"></i> 管理员列表</a>
+                    <a href="<?php echo PREFIXADMIN; ?>/admin/index"><i class="fa fa-fw fa-wrench"></i> 管理员列表</a>
                 </li>
                 <li>
-                    <a href=""><i class="fa fa-fw fa-wrench"></i> 管理员(你的)日志</a>
+                    <a href="<?php echo PREFIXADMIN; ?>/log/index"><i class="fa fa-fw fa-wrench"></i>
+                        <?php echo session('yang.adminid')==1 ? '管理员' : '你的'; ?>日志</a>
                 </li>
             </ul>
         </li>

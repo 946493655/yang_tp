@@ -9,6 +9,13 @@ class LogModel extends BaseModel
 
     protected $tableName = 'log';
     protected $fields = [
-        'adminid','serial','ip','ipaddr','loginTime','logoutTime',
+        'adminid','serial','ip','ipaddr','logintime','logouttime',
     ];
+
+    public function getAdminName($adminid)
+    {
+        $adminModel = new AdminModel();
+        $admin = $adminModel->where('id='.$adminid)->find();
+        return $admin ? $admin['admin'] : '';
+    }
 }

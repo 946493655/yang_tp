@@ -7,18 +7,18 @@
         <!--<span class="icon-bar"></span>-->
         <!--<span class="icon-bar"></span>-->
     <!--</button>-->
-    <a class="navbar-brand" href="">{$session['adminName']?'YANGYANG':'XXX'} 后台管理 </a>
+    <a class="navbar-brand" href=""><?php echo session['yang.adminid']?'YANGYANG':'XXX'; ?> 后台管理 </a>
 </div>
 <ul class="nav navbar-right top-nav">
     <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {$session['adminName']?$session['adminName']:'某某'} <b class="caret"></b></a>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo session('yang.adminName')?session('yang.adminName'):'某某'; ?> <b class="caret"></b></a>
         <ul class="dropdown-menu">
             <li>
                 <a href=""><i class="fa fa-fw fa-gear"></i> 设置 </a>
             </li>
             <li class="divider"></li>
             <li>
-                <a href="{$prefix_domain}/admin/logout"><i class="fa fa-fw fa-power-off"></i> 退出 </a>
+                <a href="<?php echo PREFIXADMIN; ?>/admin/logout"><i class="fa fa-fw fa-power-off"></i> 退出 </a>
             </li>
         </ul>
     </li>

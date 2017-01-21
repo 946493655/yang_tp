@@ -9,6 +9,6 @@ class AdminModel extends BaseModel
 
     protected $tableName = 'admin';
     protected $fields = [
-        'admin','pwd','createTime','updateTime',
+        'admin','pwd','createtime','updatetime',
     ];
 }

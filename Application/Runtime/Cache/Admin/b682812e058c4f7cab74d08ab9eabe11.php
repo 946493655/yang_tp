@@ -32,11 +32,11 @@
         <!--<span class="icon-bar"></span>-->
         <!--<span class="icon-bar"></span>-->
     <!--</button>-->
-    <a class="navbar-brand" href=""><?php echo session['adminid']?'YANGYANG':'XXX'; ?> 后台管理 </a>
+    <a class="navbar-brand" href=""><?php echo session['yang.adminid']?'YANGYANG':'XXX'; ?> 后台管理 </a>
 </div>
 <ul class="nav navbar-right top-nav">
     <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo session('adminName')?session('adminName'):'某某'; ?> <b class="caret"></b></a>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo session('yang.adminName')?session('yang.adminName'):'某某'; ?> <b class="caret"></b></a>
         <ul class="dropdown-menu">
             <li>
                 <a href=""><i class="fa fa-fw fa-gear"></i> 设置 </a>
@@ -114,7 +114,48 @@
     <div id="page-wrapper">
         <div class="container-fluid" style="height:1150px;overflow:auto;">
 <!--网页内容开始-->
+<div class="row" style="margin:0;">
+    <div class="col-lg-6 table_w">
+        <h2>管理员列表</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover table_center">
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>管理员</th>
+                    <th>创建时间</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php foreach ($datas as $data) { ?>
+                <tr>
+                    <td><?php echo $data['id']; ?></td>
+                    <td><?php echo $data['admin']; ?></td>
+                    <td><?php echo date('Y-m-d H:i',$data['createtime']); ?></td>
+                    <td><a href="">修改</a></td>
+                </tr>
+                <?php } ?>
+                </tbody>
+            </table>
+            <!--@include('admin.layout.page')-->
+        </div>
+    </div>
+    <!--后台管理员登录信息-->
 
+<style>
+    #info { width:25%;border:1px solid rgba(240,240,240,1);border-radius:5px;float:right; }
+</style>
+<div class="col-lg-6" id="info">
+    <?php if (session('yang')) { ?>
+    <h3>登录人：<?php echo session('yang.adminName'); ?></h3>
+    <p>登录时间：<?php echo date('Y年m月d日 H:i',session('admin.loginTime')); ?></p>
+    <p>上次登录：<?php echo session('yang.lasttime') ? date(session('Y年m月d日 H:i','yang.lasttime')) : '首次登录'; ?></p>
+    <?php } ?>
+    <p>YANGYANG.LTD</p>
+    <!--<p>For complete documentation, please visit <a href="http://getbootstrap.com/css/#forms">Bootstrap's Form Documentation</a>.</p>-->
+</div>
+</div>
 <!--网页内容开始-->
 <!--后台底部模板-->
 

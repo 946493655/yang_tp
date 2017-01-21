@@ -1,0 +1,39 @@
+<include file='Common:header'/>
+<!--网页内容开始-->
+<div class="row" style="margin:0;">
+    <div class="col-lg-6 table_w">
+        <h2>管理员日志</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover table_center">
+                <thead>
+                <tr>
+                    <th>管理员</th>
+                    <th>登录的ip</th>
+                    <th>登录的地区</th>
+                    <th>登录时间</th>
+                    <th>退出时间</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php if ($datas) { ?>
+                <?php foreach ($datas as $data) { ?>
+                <tr>
+                    <td><?php echo $logModel->getAdminName($data['adminid']); ?></td>
+                    <td><?php echo $data['ip']; ?></td>
+                    <td><?php echo $data['ipaddr']; ?></td>
+                    <td><?php echo date('Y-m-d H:i',$data['logintime']); ?></td>
+                    <td>
+                        <?php echo $data['logouttime'] ? date('Y-m-d H:i',$data['logouttime']) : '非正常退出'; ?>
+                    </td>
+                </tr>
+                <?php } ?>
+                <?php } ?>
+                </tbody>
+            </table>
+            <!--@include('admin.layout.page')-->
+        </div>
+    </div>
+    <include file='Common:info'/>
+</div>
+<!--网页内容开始-->
+<include file='Common:footer'/>

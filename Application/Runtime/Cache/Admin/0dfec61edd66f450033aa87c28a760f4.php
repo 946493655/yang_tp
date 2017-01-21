@@ -11,7 +11,7 @@
 <div style="height:150px;"></div>
 <div class="login">
     <p style="text-align:center;"><b>YANGYANG后台</b></p>
-    <form action="<?php echo ($prefix_domain); ?>/admin/dologin" method="POST" enctype="multipart/form-data">
+    <form action="<?php echo PREFIXADMIN; ?>/login/dologin" method="POST" enctype="multipart/form-data">
         <table>
             <tr>
                 <td>用户名：</td>

@@ -1,0 +1,14 @@
+<!--后台管理员登录信息-->
+
+<style>
+    #info { width:25%;border:1px solid rgba(240,240,240,1);border-radius:5px;float:right; }
+</style>
+<div class="col-lg-6" id="info">
+    <?php if (session('yang')) { ?>
+    <h3>登录人：<?php echo session('yang.adminName'); ?></h3>
+    <p>登录时间：<?php echo date('Y年m月d日 H:i',session('admin.loginTime')); ?></p>
+    <p>上次登录：<?php echo session('yang.lasttime') ? date(session('Y年m月d日 H:i','yang.lasttime')) : '首次登录'; ?></p>
+    <?php } ?>
+    <p>YANGYANG.LTD</p>
+    <!--<p>For complete documentation, please visit <a href="http://getbootstrap.com/css/#forms">Bootstrap's Form Documentation</a>.</p>-->
+</div>
